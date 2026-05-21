@@ -22,7 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 🔐 OIDC LOGIN
       - name: Azure Login
         uses: azure/login@v2
         with:
@@ -30,16 +29,13 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      # 🔐 login ACR
       - name: Login ACR
         run: az acr login --name $ACR_NAME
 
-      # 🐳 build
       - name: Build image
         run: |
           docker build -t $ACR_LOGIN_SERVER/$IMAGE_NAME:latest .
 
-      # 📤 push
       - name: Push image
         run: |
           docker push $ACR_LOGIN_SERVER/$IMAGE_NAME:latest
