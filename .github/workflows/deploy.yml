@@ -11,7 +11,7 @@ permissions:
 
 env:
   RG: rg-frc-sandboxglobal
-  ACR_NAME: acrsandboxglobal
+  ACR_NAME: acrsandboxglobal-cpepbch8e4h7fca0
   IMAGE_NAME: php-template-aca
 
 jobs:
