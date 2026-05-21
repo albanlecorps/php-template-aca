@@ -10,9 +10,9 @@ permissions:
   contents: read
 
 env:
-  RG: rg-frc-sandboxglobal
-  ACR_NAME: acrsandboxglobal
-  ACR_LOGIN_SERVER: acrsandboxglobal-cpepbch8e4h7fca0.azurecr.io
+  RG: rg-frc-pprodgeneral
+  ACR_NAME: pprodnbtregistry
+  ACR_LOGIN_SERVER: pprodnbtregistry-aucgecdkece6b5d7.azurecr.io
   IMAGE_NAME: php-template-aca
 
 jobs:
