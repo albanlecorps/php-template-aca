@@ -11,7 +11,8 @@ permissions:
 
 env:
   RG: rg-frc-sandboxglobal
-  ACR_NAME: acrsandboxglobal-cpepbch8e4h7fca0
+  ACR_NAME: acrsandboxglobal
+  ACR_LOGIN_SERVER: acrsandboxglobal-cpepbch8e4h7fca0.azurecr.io
   IMAGE_NAME: php-template-aca
 
 jobs:
@@ -36,9 +37,9 @@ jobs:
       # 🐳 build
       - name: Build image
         run: |
-          docker build -t $ACR_NAME.azurecr.io/$IMAGE_NAME:${{ github.sha }} .
+          docker build -t $ACR_LOGIN_SERVER/$IMAGE_NAME:${{ github.sha }} .
 
       # 📤 push
       - name: Push image
         run: |
-          docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:${{ github.sha }}
+          docker push $ACR_LOGIN_SERVER/$IMAGE_NAME:${{ github.sha }}
